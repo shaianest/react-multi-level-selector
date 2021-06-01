@@ -171,7 +171,7 @@ class MultiLevelSelect extends React.Component {
       if (item.options) {
         return (
           <div key={`${item.value}-${i}`} className="options-container">
-            <div className={`options-label ${this.getClassName('options-label')}`}>{item.label}</div>
+            <div className={`options-label ${this.getClassName('options-label')}`}>{{this.renderSubMenu(item, parent)}}</div>
             {this.renderSubMenu(item, parent)}
           </div>
         );
