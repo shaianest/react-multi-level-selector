@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import listensToClickOutside from 'react-onclickoutside';
 import suffixedClassName from './suffixedClassName';
 import findParentStructure from './helper';
 import './style.scss';
@@ -29,12 +28,6 @@ class MultiLevelSelect extends React.Component {
   removeSelectedGroup = ({ value }) => {
     const { values } = this.state;
     this.setState({ values: values.filter(data => data.value !== value) }, this.onOptionsChange);
-  }
-
-  handleClickOutside = () => {
-    const { isMenuOpen } = this.state;
-
-    return isMenuOpen && this.setState({ isMenuOpen: false });
   }
 
   toggleMenu = () => {
@@ -280,4 +273,4 @@ MultiLevelSelect.defaultProps = {
   className: '',
 };
 
-export default listensToClickOutside(MultiLevelSelect);
+export default MultiLevelSelect;
