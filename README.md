@@ -46,6 +46,7 @@ const options = [
       { value: 'san fransis', label: 'San Fransis' },
     ],
   },
+ ]
 
 function App() {
   return (
