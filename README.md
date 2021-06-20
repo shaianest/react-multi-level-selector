@@ -7,7 +7,7 @@
 ## Installation
 
 ```bash
-npm install --save react-multi-level-selector
+npm install --save https://github.com/shaianest/react-multi-level-selector.git
 ```
 
 ## Usage
@@ -69,4 +69,5 @@ export default App;
 | **`options`**     | `{Array}`    | Options for the dropdown. Specify the options for users to select from. |
 | **`placeholder`** | `{String}`   | The text displayed when no option is selected.                          |
 | **`onChange`**    | `{function}` | Subscribe to change events.                                             |
-| **`className`**   | `{String}`   | className to style the selector                                         |
+| **`menuopen`**    | `{state}`    | open state                                                              |
+| **`setmenuopen`**    | `{set state}`    | open set state                                                              |
