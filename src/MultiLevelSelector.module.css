@@ -1,0 +1,226 @@
+
+.multi_level_selector_container {
+  box-sizing: border-box;
+  width: 100%;
+}
+.multi_level_selector_container .menu_close {
+  display: none;
+}
+.multi_level_selector_container .menu_open {
+  display: block;
+}
+.multi_level_selector_container .active {
+  box-shadow: 0px 0px 0px 1px #2196f3;
+}
+.multi_level_selector_container .inactive {
+  box-shadow: none;
+}
+.multi_level_selector_container .multi_selector_container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ccc;
+  max-width: 100%;
+  background-color: #fff;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector .multi_selector_placeholder {
+  font-size: 16px;
+  color: #818181;
+  margin-left: 10px;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector .options_selected_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  min-width: max-content;
+  flex-wrap: nowrap;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector .options_selected_container .options_value {
+  display: inline-block;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector .options_selected_container .options_group {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector .options_selected_container .or_separator {
+  color: #555;
+  display: inline;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector .options_selected_container .remove_group {
+  color: #ccc;
+  font-size: 16px;
+  margin-left: 3px;
+  cursor: pointer;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector .options_selected_container .remove_group:hover {
+  color: #f00;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector_button {
+  display: flex;
+  align-items: center;
+  margin: 8px;
+  min-width: 25px;
+  height: 25px;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector_button:hover .arrow_down {
+  border-top: 10px solid #555;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector_button:hover .arrow_up {
+  border-bottom: 10px solid #555;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector_button .arrow_down {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #ccc;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector_button .arrow_down:hover {
+  border-top: 10px solid #555;
+}
+.multi_level_selector_container .multi_selector_container .multi_selector_button .arrow_up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #555;
+}
+.multi_level_selector_container .multi_level_options_container {
+  position: absolute;
+  background-color: #fff;
+  margin-top: 5px;
+  border-radius: 5px;
+  z-index: 1;
+  box-shadow: 0px 0px 5px #ccc;
+  min-width: 200px;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_sub_menu {
+  display: flex;
+  align-items: center;
+  padding: 10px 25px 10px 15px;
+  cursor: pointer;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_sub_menu:hover {
+  background-color: #f0f0f0;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_sub_menu input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_sub_menu input:checked ~ .checkbox .checkmark {
+  background-color: #2196f3;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_sub_menu input:checked ~ .checkbox .checkmark:after {
+  display: block;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_sub_menu .checkbox {
+  position: relative;
+  height: 14px;
+  width: 14px;
+  margin-right: 10px;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_sub_menu .checkbox .checkmark {
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_sub_menu .checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 5px;
+  top: 1.5px;
+  width: 2px;
+  height: 7px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_sub_menu:hover input ~ .checkbox .checkmark {
+  background-color: #fff;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_sub_menu:hover input:checked ~ .checkbox .checkmark {
+  background-color: #2196f3;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container.sls {
+  padding: 0 18px 0 0;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px 10px 10px;
+  position: relative;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container .options_label {
+  width: 100%;
+  word-break: break-all;
+  padding-right: 10px;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container .options_sub_menu_container_wrapper {
+  padding: 3em 3em 3em 0;
+  margin: -3em 0em;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  transform: translate(100%, 0);
+  display: none;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container .options_sub_menu_container {
+  background-color: #fff;
+  box-shadow: 0px 0px 3px #ccc;
+  width: max-content;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container .options_sub_menu_container .options_sub_menu_header {
+  font-size: 14px;
+  padding: 10px 15px;
+  color: #818181;
+  text-transform: uppercase;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container:hover > .options_sub_menu_container_wrapper {
+  display: block;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container:hover .arrow_right {
+  border-left: 7px solid #555;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container .arrow_right {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid #ccc;
+}
+.multi_level_selector_container .multi_level_options_container .options_main_menu .options_container .arrow_right:hover {
+  border-left: 7px solid #555;
+}
